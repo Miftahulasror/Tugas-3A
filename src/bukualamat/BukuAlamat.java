@@ -5,10 +5,13 @@
  */
 package bukualamat;
 
+import bukualamat.model.DataPersonal;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -23,6 +26,15 @@ public class BukuAlamat extends Application {
     
     private Stage stageAplikasi;
     private BorderPane rootAplikasi;
+    private ObservableList<DataPersonal> dataperson = FXCollections.observableArrayList();
+    
+    public BukuAlamat(){
+        dataperson.add(new DataPersonal("Miftahul","Asror"));
+        dataperson.add(new DataPersonal("Asror","Regowo"));
+        dataperson.add(new DataPersonal("Miftahul","Regowo"));
+        dataperson.add(new DataPersonal("Budi","Santoso"));    
+        dataperson.add(new DataPersonal("Solong","Yonathan"));
+    }
 
     @Override
     public void start(Stage primaryStage){
